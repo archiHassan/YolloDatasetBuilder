@@ -1,0 +1,340 @@
+# ============================================================================
+# YOLO Dataset Builder - .gitignore
+# Production-ready web application
+# ============================================================================
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================================================
+# Virtual Environments
+# ============================================================================
+venv/
+env/
+ENV/
+fresh_venv/
+phase2_env/
+.venv/
+*.virtualenv
+
+# ============================================================================
+# Environment Variables & Secrets
+# ============================================================================
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+
+# Keep example files
+!.env.example
+!backend/.env.example
+
+# ============================================================================
+# IDE & Editors
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================================
+# Data & Database
+# ============================================================================
+
+# Database files
+data/annotations.db
+data/annotations.db-wal
+data/annotations.db-shm
+*.db
+*.sqlite
+*.sqlite3
+
+# Data directories (production web app)
+data/images/*
+data/backups/*
+data/exports/*
+
+# Keep directory structure with .gitkeep
+!data/images/.gitkeep
+!data/backups/.gitkeep
+!data/exports/.gitkeep
+
+# ============================================================================
+# Frontend (React/Node.js)
+# ============================================================================
+
+# Dependencies
+frontend/node_modules/
+frontend/.pnp
+frontend/.pnp.js
+
+# Build output
+frontend/dist/
+frontend/build/
+
+# Production
+frontend/.next/
+frontend/out/
+
+# Cache
+frontend/.cache/
+frontend/.parcel-cache/
+
+# Misc
+frontend/.DS_Store
+frontend/*.log
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Local env files
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ============================================================================
+# Backend (FastAPI/Python)
+# ============================================================================
+
+# Instance folder
+backend/instance/
+
+# Local uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Logs
+backend/logs/*
+!backend/logs/.gitkeep
+
+# ============================================================================
+# AI Models & Weights
+# ============================================================================
+
+# Model weights (download at runtime)
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.safetensors
+*.bin
+models/*
+!models/.gitkeep
+!models/README.md
+
+# Specific model files
+yolov*.pt
+sam_*.pth
+detr-*.pth
+clip-*.pth
+grounding_dino*.pth
+
+# Transformers cache
+.cache/
+huggingface/
+transformers_cache/
+
+# HuggingFace model directories
+facebook/
+openai/
+Salesforce/
+IDEA-Research/
+groundingdino/
+
+# ============================================================================
+# Logs
+# ============================================================================
+logs/
+*.log
+*.log.*
+pipeline*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Keep logs directory structure
+!logs/.gitkeep
+
+# ============================================================================
+# Docker
+# ============================================================================
+
+# Docker volumes (not in docker-compose.yml)
+.docker-data/
+
+# ============================================================================
+# Testing
+# ============================================================================
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jest (if added)
+frontend/coverage/
+
+# Test outputs
+test-results/
+test-output/
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
+tmp/
+temp/
+*.tmp
+*.temp
+.temp/
+
+# ============================================================================
+# Archive (old development files)
+# ============================================================================
+archive/
+
+# ============================================================================
+# Nginx
+# ============================================================================
+
+# SSL certificates (use Let's Encrypt or mount from host)
+nginx/ssl/*.pem
+nginx/ssl/*.key
+nginx/ssl/*.crt
+
+# Keep example SSL directory
+!nginx/ssl/.gitkeep
+
+# Nginx logs (use volume mount instead)
+nginx/logs/
+
+# ============================================================================
+# Production Exports
+# ============================================================================
+
+# Large export files
+*.zip
+*.tar.gz
+annotations_large_*.json
+dataset_*.coco
+export_large_*/
+bulk_annotations/
+
+# ============================================================================
+# Development Tools
+# ============================================================================
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pylint
+.pylint.d/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================================================
+# ML Training (if added)
+# ============================================================================
+
+# Training runs
+runs/
+ultralytics_cache/
+wandb/
+tb_logs/
+tensorboard_logs/
+
+# Checkpoints
+checkpoint*.pth
+checkpoints/
+
+# ============================================================================
+# User-specific files
+# ============================================================================
+
+# User configurations
+user_config.*
+local_config.*
+custom_ontology.json
+personal_config.yaml
+
+# User uploads (production)
+uploads/
+user_data/
+
+# ============================================================================
+# CI/CD
+# ============================================================================
+.github/workflows/*.log
+
+# ============================================================================
+# Documentation builds
+# ============================================================================
+docs/_build/
+site/
+
+# ============================================================================
+# IMPORTANT: Files to KEEP (exceptions)
+# ============================================================================
+
+# Configuration examples
+!backend/.env.example
+!configs/default.yaml
+
+# Documentation
+!docs/**/*.md
+!README.md
+!PRODUCTION_SETUP.md
+!CLAUDE.md
+
+# Scripts
+!scripts/*.sh
+
+# Docker configuration
+!docker-compose.yml
+!backend/Dockerfile
+!frontend/Dockerfile
+!nginx/nginx.conf
+
+# Database schema
+!backend/app/db/*.sql
+!docs/architecture/DATABASE_SCHEMA.md
+
+# Git keeps
+!**/.gitkeep
+
+.claude
